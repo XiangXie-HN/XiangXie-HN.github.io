@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xiang Xie 谢翔</title>
+<meta name="description" content="Xiang Xie — Ph.D. candidate, Business School, Central South University. Simulation modelling and sensitivity analysis.">
+<style>
+  :root {
+    --bg: #fafaf8;
+    --card: #ffffff;
+    --text: #22252a;
+    --muted: #6b7078;
+    --line: #e6e4df;
+    --accent: #1f4e79;
+    --accent-soft: #eaf1f8;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+    line-height: 1.7;
+    font-size: 16px;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(250,250,248,.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav .inner {
+    max-width: 960px; margin: 0 auto; padding: 0 20px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    height: 56px;
+  }
+  nav .brand { font-weight: 600; color: var(--text); white-space: nowrap; }
+  nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; overflow-x: auto; }
+  nav li a { color: var(--muted); font-size: 15px; white-space: nowrap; }
+  nav li a:hover { color: var(--accent); text-decoration: none; }
+
+  main { max-width: 960px; margin: 0 auto; padding: 0 20px 60px; }
+  section { padding: 56px 0 24px; border-bottom: 1px solid var(--line); }
+  section:last-child { border-bottom: none; }
+  h2 { font-size: 26px; margin: 0 0 24px; font-weight: 600; }
+  h2 .zh { color: var(--muted); font-weight: 400; font-size: 20px; margin-left: 10px; }
+  h3 {
+    font-size: 13px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--accent); margin: 28px 0 12px; font-weight: 600;
+  }
+  .lang-block + .lang-block { margin-top: 36px; padding-top: 28px; border-top: 1px dashed var(--line); }
+
+  /* Home */
+  .hero { display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start; }
+  .photo {
+    width: 220px; aspect-ratio: 5 / 6; object-fit: cover;
+    border-radius: 6px; border: 1px solid var(--line); background: #eee; display: block;
+  }
+  .hero h1 { margin: 0; font-size: 34px; font-weight: 600; }
+  .hero h1 .zh { font-weight: 400; color: var(--muted); font-size: 26px; margin-left: 8px; }
+  .title-line { color: var(--muted); margin: 4px 0 18px; }
+  .contact { list-style: none; padding: 0; margin: 18px 0 0; font-size: 15px; }
+  .contact li { margin: 4px 0; }
+  .contact b { display: inline-block; min-width: 76px; color: var(--muted); font-weight: 500; }
+  .email { font-family: Consolas, "Courier New", monospace; }
+
+  /* Research */
+  .interests { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .interest {
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px;
+  }
+  .interest strong { display: block; margin-bottom: 4px; }
+  .interest p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  /* Lists */
+  ol.pubs { padding-left: 0; list-style: none; counter-reset: pub; margin: 0; }
+  ol.pubs li {
+    counter-increment: pub; position: relative; padding-left: 40px; margin-bottom: 16px;
+  }
+  ol.pubs li::before {
+    content: "[" counter(pub) "]"; position: absolute; left: 0; color: var(--muted);
+  }
+  .me { font-weight: 700; }
+  .venue { font-style: italic; }
+  .tag {
+    display: inline-block; font-size: 12px; padding: 0 8px; border-radius: 10px;
+    background: var(--accent-soft); color: var(--accent); margin-left: 6px; vertical-align: 1px;
+  }
+
+  /* Life */
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 8px; }
+  .gallery figure { margin: 0; }
+  .gallery img {
+    width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px;
+    background: #eee; display: block;
+  }
+  .gallery figcaption { font-size: 13px; color: var(--muted); margin-top: 4px; }
+  .hobbies { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; padding: 0; margin: 0; }
+  .hobbies li {
+    background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 10px 16px;
+  }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px 0; }
+
+  @media (max-width: 700px) {
+    nav .brand { display: none; }
+    nav ul { gap: 16px; }
+    .hero { grid-template-columns: 1fr; gap: 24px; }
+    .photo { width: 180px; }
+    .interests, .gallery { grid-template-columns: 1fr; }
+    ol.pubs li { padding-left: 34px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="#home">Xiang Xie</a>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#conferences">Conferences</a></li>
+      <li><a href="#life">Life</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ============ 1. Home ============ -->
+<section id="home">
+  <div class="hero">
+    <img class="photo" src="images/id-photo.jpg" alt="Xiang Xie">
+    <div>
+      <h1>Xiang Xie<span class="zh">谢翔</span></h1>
+      <p class="title-line">Ph.D. Candidate in Management Science and Engineering · Business School, Central South University</p>
+
+      <div class="lang-block">
+        <p>I am currently a Ph.D. candidate in Management Science and Engineering at the Business School, Central South University, China, and a visiting researcher at Bocconi University, Italy. My research focuses on simulation modelling and sensitivity analysis, with applications in systems engineering. My work has been published in several peer-reviewed journals, including <i>IISE Transactions</i>, <i>EJOR</i>, <i>IJPR</i>, <i>TRA</i>, and the <i>Journal of Systems Engineering</i> (in Chinese). I have also presented at leading international conferences such as the Winter Simulation Conference and the INFORMS Annual Meeting.</p>
+      </div>
+      <div class="lang-block">
+        <p>谢翔，湖南益阳人，中南大学商学院管理科学与工程专业博士研究生，现为意大利博科尼大学（Bocconi University）访问学者。主要研究方向为仿真建模与灵敏度分析及其在系统工程中的应用。研究成果发表于 <i>IISE Transactions</i>、<i>EJOR</i>、<i>IJPR</i>、<i>TRA</i>、《系统工程学报》等同行评审期刊，并在 Winter Simulation Conference、INFORMS Annual Meeting 等重要国际学术会议上展示论文。</p>
+      </div>
+
+      <ul class="contact">
+        <!-- 邮箱采用防爬虫写法 -->
+        <li><b>E-mail</b><span class="email">xiexianghy[@t]163[d.t]com</span></li>
+        <li><b>Hometown</b>Yiyang, Hunan, China</li>
+        <li><b>籍贯</b>湖南益阳</li>
+        <li><b>Address</b>Business School, Central South University, Changsha, Hunan 410083, China</li>
+        <li><b>地址</b>中国湖南省长沙市 中南大学商学院 410083</li>      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. Research Interests ============ -->
+<section id="research">
+  <h2>Research Interests</h2>
+
+  <div class="lang-block">
+    <div class="interests">
+      <div class="interest"><strong>Vehicle Recalls</strong><p>Understanding how defect complaints drive recall decisions and delays.</p></div>
+      <div class="interest"><strong>Complex System Simulation</strong><p>Agent-based modelling, system dynamics and hybrid simulation of socio-technical systems.</p></div>
+      <div class="interest"><strong>Design and Analysis of Simulation Experiments</strong><p>Factor screening, sensitivity analysis and sequential methods with error control.</p></div>
+      <div class="interest"><strong>Explainable Artificial Intelligence</strong><p>Using simulation-based sensitivity analysis to interpret complex models.</p></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ============ 3. Publications ============ -->
+<section id="publications">
+  <h2>Publications</h2>
+  <p style="color:var(--muted);font-size:14px;margin-top:-12px">* Corresponding author</p>
+
+  <div class="lang-block">
+    <h3>English Papers</h3>
+    <ol class="pubs">
+      <li>Wen Shi, <span class="me">Xiang Xie</span>, Xi Chen*, Hong Wan. Sequential group Morris method with error control for efficient factor screening in simulation experiments. <span class="venue">IISE Transactions</span>, 2026, published online in advance. <a href="https://www.tandfonline.com/doi/abs/10.1080/24725854.2026.2641685">[paper]</a></li>
+      <li>Wen Shi, Yuhao Qi, <span class="me">Xiang Xie</span>*. Exploring the dynamic effects of emission policies: A hybrid approach integrating system dynamics and large language models. <span class="venue">Transportation Research Part A: Policy and Practice</span>, 2026, 214: 105278. <a href="https://www.sciencedirect.com/science/article/pii/S0965856426004192?dgcid=author">[paper]</a></li>
+      <li>Wen Shi, <span class="me">Xiang Xie</span>, Xi Chen*. Unveiling the impact of defect complaints on vehicle recall delays: An integrated agent-based simulation and factor screening approach. <span class="venue">International Journal of Production Research</span>, 2025, 63(19): 6939–6960. <a href="https://www.tandfonline.com/doi/full/10.1080/00207543.2025.2490978">[paper]</a></li>
+      <li>Wen Shi, Ao Chen*, <span class="me">Xiang Xie</span>. Generating and validating cluster sampling matrices for model-free factor screening. <span class="venue">European Journal of Operational Research</span>, 2024, 313(1): 241–257. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0377221723006112">[paper]</a></li>
+      <li>Wen Shi, <span class="me">Xiang Xie</span>*, Hong Wan. Top-<i>m</i> factor screening for stochastic simulation: Multi-armed bandit and sequential bifurcation combined. In <span class="venue">Proceedings of the 2023 Winter Simulation Conference (WSC)</span>. IEEE, 2023: 528–539. <a href="https://ieeexplore.ieee.org/document/10408534">[paper]</a></li>
+    </ol>
+  </div>
+
+  <div class="lang-block">
+    <h3>中文论文</h3>
+    <ol class="pubs">
+      <li><span class="me">谢翔</span>，施文，李青仪*．基于强化学习的前 <i>m</i> 因子序贯分支法与应用［J］．<span class="venue">系统工程学报</span>，2026，录用待刊．<a href="https://jse.tju.edu.cn/ch/reader/view_abstract.aspx?flag=2&amp;file_no=202408160000001&amp;journal_id=jse">[论文]</a></li>
+      <li>施文，<span class="me">谢翔</span>*．数字孪生下因子效应实时识别与误差控制研究［J］．<span class="venue">系统工程学报</span>，2026，录用待刊．</li>
+    </ol>
+  </div>
+
+  <div class="lang-block">
+    <h3>授权专利</h3>
+    <ol class="pubs">
+      <li>施文，<span class="me">谢翔</span>，陈晓红．一种基于分层误差控制的因子效应在线识别方法和设备．发明专利，专利号：ZL 2022 1 0047863.9．</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 4. Conferences ============ -->
+<section id="conferences">
+  <h2>Conferences &amp; Talks</h2>
+
+  <div class="lang-block">
+    <ol class="pubs">
+      <li>“Top-<i>m</i> factor screening for stochastic simulation: Multi-armed bandit and sequential bifurcation combined.” <span class="venue">2023 Winter Simulation Conference (WSC)</span>, 2023.</li>
+      <li>“Unveiling the impact of defect complaints on vehicle recall delays: Integrated approach with agent-based simulation and factor screening.” <span class="venue">The 4th Interdisciplinary Forum on Economics and Management</span>, Business School, Central South University, December 2024. Session talk.</li>
+      <li>“Real-time identification and error control of factor effects under digital twins.” <span class="venue">The 2nd Interdisciplinary Forum on Economics and Management</span>, Business School, Central South University, January 2022. Session talk.</li>
+      <li>“Identifying influential factors in online complaint-recall process via simulation.” <span class="venue">INFORMS 2021 Annual Meeting</span>, October 2021. Session: Simulation-based Sensitivity Analysis and Its Applications.</li>
+      <li>“Research on online data-driven real-time identification of factor effects.” <span class="venue">Annual Meeting of the Information Systems Engineering Committee, Systems Engineering Society of China</span>, October 2021. Session talk.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 5. Life ============ -->
+<section id="life">
+  <h2>Life &amp; Hobbies<span class="zh">生活与爱好</span></h2>
+
+  <!-- 生活照：把照片放进 images 文件夹，文件名对应下面的 src -->
+  <div class="gallery">
+    <figure><img src="images/life-1.jpg" alt="Prague" loading="lazy"><figcaption>Prague, Czech Republic · 布拉格</figcaption></figure>
+    <figure><img src="images/life-2.jpg" alt="Life photo" loading="lazy"><figcaption>&nbsp;</figcaption></figure>
+    <figure><img src="images/life-3.jpg" alt="Life photo" loading="lazy"><figcaption>&nbsp;</figcaption></figure>
+  </div>
+
+  <div class="lang-block">
+    <h3>English</h3>
+    <p>Outside research, I enjoy listening to music, going for a jog, and getting together with friends. Music keeps me company while I work, running helps me clear my head, and time with friends is always the best way to recharge.</p>
+    <ul class="hobbies">
+      <li>🎵 Listening to music</li>
+      <li>🏃 Jogging</li>
+      <li>🍻 Hanging out with friends</li>
+    </ul>
+  </div>
+
+  <div class="lang-block">
+    <h3>中文</h3>
+    <p>科研之外，我喜欢听歌、慢跑，以及和朋友们一起相聚。音乐陪伴我工作，慢跑让我放空思绪，而和朋友们在一起永远是最好的充电方式。</p>
+    <ul class="hobbies">
+      <li>🎵 听歌</li>
+      <li>🏃 慢跑</li>
+      <li>🍻 与朋友相聚</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>© 2026 Xiang Xie · 谢翔</footer>
+
+<script>
+  // 图片还没上传时显示灰色占位，而不是破图标
+  document.querySelectorAll('img').forEach(function (img) {
+    img.addEventListener('error', function () {
+      img.removeAttribute('src');
+      img.alt = '';
+    });
+  });
+</script>
+</body>
+</html>
